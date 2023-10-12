@@ -43,3 +43,53 @@ $(".arrow").on("click", function() {
     // $(".extra").toggle(); // This will toggle the visibility of the hidden content
     $(this).toggleClass(".extra"); // Optionally, toggle the down class for your arrow styling
   });
+
+
+
+
+
+$(".fa-times").on("click", function() {
+    $(this).css.right = "-200px";
+})
+$(".fa-bars").on("click", function() {
+    $(this).css.right = "0px";
+})
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible && !reveals[i].classList.contains("active")) {
+            reveals[i].classList.add("active");
+        }
+    }
+}
+
+document.addEventListener("scroll", reveal);
+
+
+// function reveal() {
+//     var reveals = document.querySelectorAll(".reveal");
+
+//     for (var i = 0; i < reveals.length; i++) {
+//         var windowHeight = window.innerHeight;
+//         var elementTop = reveals[i].getBoundingClientRect().top;
+//         var elementVisible = 150;
+
+//         if (elementTop < windowHeight - elementVisible) {
+//             reveals[i].style.opacity = "1";
+//             reveals[i].style.transform = "translateY(0)";
+//         } 
+//         else {
+//             reveals[i].style.opacity = "0";
+//             // alert("dgjb")
+
+//             reveals[i].style.transform = "translateY(50px)";
+//         }
+//     }
+// }
+
+// document.addEventListener("scroll", reveal);

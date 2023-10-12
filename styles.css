@@ -9,6 +9,9 @@ body{
     /* background-color: black; */
     color: white;
 }
+html{
+    scroll-behavior: smooth;
+}
 #header{
     width: 100%;
     height: 100vh;
@@ -35,8 +38,10 @@ body{
   nav{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* position: fixed; */
+    /* top: 0; */
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   nav ul li{
@@ -178,6 +183,10 @@ nav ul li a:hover::after{
 /* #portfolio{
     padding: 0px 0;
 } */
+#portfolio h1 {
+    font-size: 50px;
+    margin: 50px;
+}
 .work-list{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
@@ -264,6 +273,34 @@ nav ul li a:hover::after{
     background: #ff004f;
 }
 
+.reveal {
+    position: relative;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Add a transition for smooth opacity changes */
+}
+
+.reveal.active {
+    opacity: 1;
+}
+
+.fade-bottom {
+    animation: fade-bottom 1s ease-in; /* Apply the fade-bottom animation */
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-bottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    96%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
 
 /* ---------------Contact Me--------------------- */
 .contact-left{
@@ -339,8 +376,127 @@ form .btn2{
 
 /* responsiveness */
 
-@media only screen and (max-width:600px){
-    #header
+
+nav .fas{
+    display: none;
 }
+
+@media only screen and (max-width: 600px){
+/* #header{
+background-image: url(images/phone-background .png);
+} */
+header—text {
+width: auto;
+margin-top:100%;
+font-size: 16px;
+}
+.header-text hl{
+font-size: 30px;
+}
+.header-text p {
+    /* display: inline-block; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* position: absolute;
+    left: 50%;
+    top: 80%; */
+    font-size: 40px;
+    color: #ff004f;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
+}
+
+.header-text img{
+    /* height: 800px; */
+    position: absolute;
+
+    /* display: flex;
+    align-items: end;
+    justify-content: flex-end; */
+    flex-basis: 100%;
+    vertical-align: bottom;
+    
+}
+nav .fas {
+    display: block;
+    font-size: 25px ;
+}
+
+nav ul {
+    display: block;
+    background: #ff004f;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: 0.5s;
+}
+nav ul li{
+    display: block;
+    margin: 25px;
+}
+
+nav ul .fas{
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    cursor: pointer;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Set the height of your container */
+}
+
+/* .header-text img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  flex-basis: 100%;
+}
+
+.header-text p {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 150px; /* Adjust this value based on the width of your image */
+/* } */ 
+
+.sub-titile{
+    font-size: 40px;
+}
+.about-col-1, .about-col-2{
+    flex-basis: 100%;
+}
+.about-col-1{
+    margin-bottom: 30px;
+}
+.about-col-2{
+    font-size: 14px;
+}
+.tab-links{
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.contact-left, .contact-right {
+    flex-basis: 100%;
+}
+.copyright{
+    font-size: 14px;
+}
+}
+
+
+#msg{
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
 }
